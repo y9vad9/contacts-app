@@ -45,7 +45,6 @@ class LocalContactsDataSource(private val database: ContactsDatabase) {
 
     suspend fun patch(id: Int, patch: ContactsRepository.ContactPatch) {
         return withContext(Dispatchers.IO) {
-            println("patch")
             patch.name?.let { database.contactsQueries.setName(it.string, id) }
             patch.email?.let { database.contactsQueries.setEmail(it.string, id) }
             patch.surname?.let { database.contactsQueries.setSurname(it.string, id) }
