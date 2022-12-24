@@ -72,7 +72,7 @@ class ContactsRepository(
         originals.reset()
     }
 
-    class ContactPatch(
+    data class ContactPatch(
         val name: Name? = null,
         val surname: Surname? = null,
         val email: Email? = null,

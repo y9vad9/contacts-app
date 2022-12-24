@@ -1,3 +1,4 @@
+import com.android.build.api.dsl.Optimization
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -29,8 +30,8 @@ dependencies {
     implementation(Deps.Libs.Androidx.Compose.Navigation)
     implementation(Deps.Libs.Coil.Compose)
     implementation(Deps.Libs.Androidx.Compose.SystemUiController)
-    implementation(Deps.Libs.Androidx.Compose.Wear)
-    implementation(Deps.Libs.Androidx.Compose.WearMaterial)
+    implementation(Deps.Libs.Androidx.Compose.Material)
+    implementation(Deps.Libs.Kotlinx.Immutables)
 
     testImplementation(Deps.Libs.JUnit.Jupiter)
 }
@@ -54,6 +55,8 @@ android {
         getByName("release") {
             isMinifyEnabled = true
             isShrinkResources = true
+
+
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"

@@ -28,6 +28,7 @@ import coil.size.Size
 import coil.transform.CircleCropTransformation
 import com.y9vad9.contacts.domain.value.Email
 import com.y9vad9.contacts.domain.value.Identifier
+import com.y9vad9.contacts.ui.components.OnBackPressed
 import com.y9vad9.contacts.ui.dependencies.*
 import com.y9vad9.contacts.usecases.*
 import com.y9vad9.contacts.viewmodels.ContactDetailsViewModel
@@ -62,7 +63,7 @@ fun ContactScreen(
             onBackPressed()
         }
     }
-    //OnBackPressed(onBack = onBackPressed)
+    OnBackPressed(onBack = onBackPressed)
 
     LaunchedEffect(false) {
         viewModel.init()
@@ -155,8 +156,7 @@ fun ContactScreen(
                             Spacer(Modifier.width(8.dp))
                             Text("Cancel")
                         }
-                    },
-                    dismissAction = { viewModel.restore() }
+                    }
                 ) {
                     Text("You've successfully changed the contact.")
                 }

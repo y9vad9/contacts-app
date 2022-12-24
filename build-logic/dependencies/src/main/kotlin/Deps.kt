@@ -99,6 +99,7 @@ object Deps {
             const val Serialization = "org.jetbrains.kotlinx:kotlinx-serialization-json:$serializationVersion"
             const val Datetime = "org.jetbrains.kotlinx:kotlinx-datetime:$datetimeVersion"
             const val Nodejs = "org.jetbrains.kotlinx:kotlinx-nodejs:$nodejsExternalsVersion"
+            const val Immutables = "org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5"
         }
 
         object Kotlin {
