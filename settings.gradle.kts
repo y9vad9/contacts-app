@@ -27,5 +27,3 @@ rootProject.name = "contacts-app"
 
 includeBuild("build-logic/dependencies")
 includeBuild("build-logic/configuration")
-includeBuild("build-logic/service-deploy")
-//includeBuild("buildUtils/library-deploy")

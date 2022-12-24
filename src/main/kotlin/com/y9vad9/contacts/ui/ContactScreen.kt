@@ -56,7 +56,6 @@ fun ContactScreen(
     onEdit: () -> Unit,
     onBackPressed: () -> Unit
 ) {
-    val isLoading by viewModel.isLoading.collectAsState()
     val isPendingState by viewModel.isPendingChanges.collectAsState()
     val contact by viewModel.contact.collectAsState()
     val onBackPressed = remember {

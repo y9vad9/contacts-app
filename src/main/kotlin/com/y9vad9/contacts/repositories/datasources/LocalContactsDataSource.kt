@@ -68,6 +68,4 @@ class LocalContactsDataSource(private val database: ContactsDatabase) {
         val email: String,
         val profilePictureUrl: String
     )
-
-    class SqlDriver
 }

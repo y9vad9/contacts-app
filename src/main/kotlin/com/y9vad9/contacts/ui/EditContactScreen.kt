@@ -36,8 +36,6 @@ fun EditContactScreen(
 ) {
     val (isSavingAvailable, setSavingAvailable) = remember { mutableStateOf(false) }
 
-    val isLoading by viewModel.isLoading.collectAsState()
-
     val (name, setName) = remember { mutableStateOf<Name?>(null) }
     val (surname, setSurname) = remember { mutableStateOf<Surname?>(null) }
     val (email, setEmail) = remember { mutableStateOf<Email?>(null) }
