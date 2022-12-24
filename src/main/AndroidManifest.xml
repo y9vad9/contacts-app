@@ -7,7 +7,6 @@
     <application
             android:name="com.y9vad9.contacts.ContactsApplication"
             android:allowBackup="true"
-            android:fullBackupContent="true"
             android:label="Contacts"
             android:supportsRtl="true"
             android:enableOnBackInvokedCallback="true"
