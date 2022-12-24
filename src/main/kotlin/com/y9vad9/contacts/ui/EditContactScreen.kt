@@ -14,8 +14,8 @@ import com.y9vad9.contacts.domain.value.Email
 import com.y9vad9.contacts.domain.value.Identifier
 import com.y9vad9.contacts.domain.value.Name
 import com.y9vad9.contacts.domain.value.Surname
-import com.y9vad9.contacts.ui.dependencies.EditContactUseCase
-import com.y9vad9.contacts.ui.dependencies.GetContactUseCase
+import com.y9vad9.contacts.ui.dependencies.LocalEditContactUseCase
+import com.y9vad9.contacts.ui.dependencies.LocalGetContactUseCase
 import com.y9vad9.contacts.usecases.EditContactUseCase
 import com.y9vad9.contacts.usecases.GetContactUseCase
 import com.y9vad9.contacts.viewmodels.EditContactViewModel
@@ -25,8 +25,8 @@ import kotlinx.coroutines.flow.filterNotNull
 @Composable
 fun EditContactScreen(
     identifier: Identifier,
-    getContactUseCase: GetContactUseCase = GetContactUseCase.current,
-    editContactUseCase: EditContactUseCase = EditContactUseCase.current,
+    getContactUseCase: GetContactUseCase = LocalGetContactUseCase.current,
+    editContactUseCase: EditContactUseCase = LocalEditContactUseCase.current,
     viewModel: EditContactViewModel = viewModel {
         EditContactViewModel(
             identifier, getContactUseCase, editContactUseCase

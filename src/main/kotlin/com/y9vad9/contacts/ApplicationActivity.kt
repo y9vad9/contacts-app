@@ -38,14 +38,14 @@ class ApplicationActivity : ComponentActivity() {
                 }
 
                 CompositionLocalProvider(
-                    EditContactUseCase provides EditContactUseCase(contactsRepository),
-                    GetContactUseCase provides GetContactUseCase(contactsRepository),
-                    LoadContactUseCase provides LoadContactsUseCase(contactsRepository),
-                    ReloadContactsUseCase provides ReloadContactsUseCase(contactsRepository),
-                    RemoveContactUseCase provides RemoveContactUseCase(contactsRepository),
-                    RestoreOriginalUseCase provides RestoreOriginalUseCase(contactsRepository),
-                    RemoveHistoryUseCase provides RemoveHistoryUseCase(contactsRepository),
-                    CheckRollbackableUseCase provides CheckRollbackableUseCase(contactsRepository)
+                    LocalEditContactUseCase provides EditContactUseCase(contactsRepository),
+                    LocalGetContactUseCase provides GetContactUseCase(contactsRepository),
+                    LocalLoadContactUseCase provides LoadContactsUseCase(contactsRepository),
+                    LocalReloadContactsUseCase provides ReloadContactsUseCase(contactsRepository),
+                    LocalRemoveContactUseCase provides RemoveContactUseCase(contactsRepository),
+                    LocalRestoreOriginalUseCase provides RestoreOriginalUseCase(contactsRepository),
+                    LocalRemoveHistoryUseCase provides RemoveHistoryUseCase(contactsRepository),
+                    LocalCheckRollbackableUseCase provides CheckRollbackableUseCase(contactsRepository)
                 ) {
                     NavHost(
                         navigation,

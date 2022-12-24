@@ -4,26 +4,26 @@ import androidx.compose.runtime.ProvidableCompositionLocal
 import androidx.compose.runtime.compositionLocalOf
 import com.y9vad9.contacts.usecases.*
 
-val EditContactUseCase: ProvidableCompositionLocal<EditContactUseCase> =
+val LocalEditContactUseCase: ProvidableCompositionLocal<EditContactUseCase> =
     compositionLocalOf { error("EditContactUseCase is not defined") }
 
-val GetContactUseCase: ProvidableCompositionLocal<GetContactUseCase> =
+val LocalGetContactUseCase: ProvidableCompositionLocal<GetContactUseCase> =
     compositionLocalOf { error("EditContactUseCase is not defined") }
 
-val LoadContactUseCase: ProvidableCompositionLocal<LoadContactsUseCase> =
+val LocalLoadContactUseCase: ProvidableCompositionLocal<LoadContactsUseCase> =
     compositionLocalOf { error("EditContactUseCase is not defined") }
 
-val ReloadContactsUseCase: ProvidableCompositionLocal<ReloadContactsUseCase> =
+val LocalReloadContactsUseCase: ProvidableCompositionLocal<ReloadContactsUseCase> =
     compositionLocalOf { error("EditContactUseCase is not defined") }
 
-val RemoveContactUseCase: ProvidableCompositionLocal<RemoveContactUseCase> =
+val LocalRemoveContactUseCase: ProvidableCompositionLocal<RemoveContactUseCase> =
     compositionLocalOf { error("EditContactUseCase is not defined") }
 
-val RestoreOriginalUseCase: ProvidableCompositionLocal<RestoreOriginalUseCase> =
+val LocalRestoreOriginalUseCase: ProvidableCompositionLocal<RestoreOriginalUseCase> =
     compositionLocalOf { error("RestoreOriginalUseCase is not defined") }
 
-val RemoveHistoryUseCase: ProvidableCompositionLocal<RemoveHistoryUseCase> =
+val LocalRemoveHistoryUseCase: ProvidableCompositionLocal<RemoveHistoryUseCase> =
     compositionLocalOf { error("RemoveHistoryUseCase is not defined") }
 
-val CheckRollbackableUseCase: ProvidableCompositionLocal<CheckRollbackableUseCase> =
+val LocalCheckRollbackableUseCase: ProvidableCompositionLocal<CheckRollbackableUseCase> =
     compositionLocalOf { error("CheckRollbackableUseCase is not defined") }

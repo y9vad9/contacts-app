@@ -48,9 +48,9 @@ import coil.request.ImageRequest
 import com.y9vad9.contacts.domain.Contact
 import com.y9vad9.contacts.domain.value.Identifier
 import com.y9vad9.contacts.ui.components.shimmerBackground
-import com.y9vad9.contacts.ui.dependencies.LoadContactUseCase
-import com.y9vad9.contacts.ui.dependencies.ReloadContactsUseCase
-import com.y9vad9.contacts.ui.dependencies.RemoveContactUseCase
+import com.y9vad9.contacts.ui.dependencies.LocalLoadContactUseCase
+import com.y9vad9.contacts.ui.dependencies.LocalReloadContactsUseCase
+import com.y9vad9.contacts.ui.dependencies.LocalRemoveContactUseCase
 import com.y9vad9.contacts.usecases.LoadContactsUseCase
 import com.y9vad9.contacts.usecases.ReloadContactsUseCase
 import com.y9vad9.contacts.usecases.RemoveContactUseCase
@@ -60,9 +60,9 @@ import kotlinx.collections.immutable.ImmutableList
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun ContactsScreen(
-    loadContactsUseCase: LoadContactsUseCase = LoadContactUseCase.current,
-    reloadContactsUseCase: ReloadContactsUseCase = ReloadContactsUseCase.current,
-    removeContactUseCase: RemoveContactUseCase = RemoveContactUseCase.current,
+    loadContactsUseCase: LoadContactsUseCase = LocalLoadContactUseCase.current,
+    reloadContactsUseCase: ReloadContactsUseCase = LocalReloadContactsUseCase.current,
+    removeContactUseCase: RemoveContactUseCase = LocalRemoveContactUseCase.current,
     viewModel: ContactsViewModel = viewModel {
         ContactsViewModel(loadContactsUseCase, reloadContactsUseCase, removeContactUseCase)
     },

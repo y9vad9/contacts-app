@@ -38,11 +38,11 @@ import com.y9vad9.contacts.viewmodels.ContactDetailsViewModel
 @Composable
 fun ContactScreen(
     identifier: Identifier,
-    getContactUseCase: GetContactUseCase = GetContactUseCase.current,
-    restoreOriginalUseCase: RestoreOriginalUseCase = RestoreOriginalUseCase.current,
-    removeContactUseCase: RemoveContactUseCase = RemoveContactUseCase.current,
-    checkRollbackableUseCase: CheckRollbackableUseCase = CheckRollbackableUseCase.current,
-    removeHistoryUseCase: RemoveHistoryUseCase = RemoveHistoryUseCase.current,
+    getContactUseCase: GetContactUseCase = LocalGetContactUseCase.current,
+    restoreOriginalUseCase: RestoreOriginalUseCase = LocalRestoreOriginalUseCase.current,
+    removeContactUseCase: RemoveContactUseCase = LocalRemoveContactUseCase.current,
+    checkRollbackableUseCase: CheckRollbackableUseCase = LocalCheckRollbackableUseCase.current,
+    removeHistoryUseCase: RemoveHistoryUseCase = LocalRemoveHistoryUseCase.current,
     viewModel: ContactDetailsViewModel = viewModel {
         ContactDetailsViewModel(
             identifier,
