@@ -1,0 +1,40 @@
+CREATE TABLE Contact (
+    id INTEGER AS Int PRIMARY KEY,
+    name TEXT NOT NULL,
+    surname TEXT NOT NULL,
+    email TEXT NOT NULL,
+    photoLink TEXT NOT NULL
+);
+
+CREATE INDEX contacts_id ON Contact(id);
+
+addContact:
+INSERT INTO Contact (name, surname, email, photoLink)
+VALUES (:name, :surname, :email, :photoLink);
+
+setName:
+UPDATE Contact SET name=? WHERE id=?;
+
+setSurname:
+UPDATE Contact SET surname=? WHERE id=?;
+
+setEmail:
+UPDATE Contact SET email=? WHERE id=?;
+
+setProfileLink:
+UPDATE Contact SET photoLink=? WHERE id=?;
+
+deleteAll:
+DELETE FROM Contact WHERE 1;
+
+getAll:
+SELECT * FROM Contact LIMIT :limit OFFSET :offset;
+
+get:
+SELECT * FROM Contact WHERE id=:id;
+
+remove:
+DELETE FROM Contact WHERE id=?;
+
+getLastId:
+SELECT last_insert_rowid();

@@ -1,0 +1,25 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+          package="com.y9vad9.pomodoro.client.android">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <application
+            android:name="com.y9vad9.contacts.ContactsApplication"
+            android:allowBackup="true"
+            android:fullBackupContent="true"
+            android:label="Contacts"
+            android:supportsRtl="true"
+            android:enableOnBackInvokedCallback="true"
+            android:theme="@style/Theme.AppCompat.NoActionBar" tools:ignore="UnusedAttribute">
+        <activity
+                android:name="com.y9vad9.contacts.ApplicationActivity"
+                android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
