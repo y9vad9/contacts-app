@@ -31,6 +31,8 @@ class ContactsViewModel(
         viewModelScope.launch {
             loadContactsUseCase.execute().onSuccess {
                 _contacts.value = it.toImmutableList()
+            }.onFailure {
+                _isFailed.value = true
             }
 
             _isLoading.value = false
@@ -38,9 +40,14 @@ class ContactsViewModel(
     }
 
     fun reinit() {
+        _isFailed.value = false
         _isLoading.value = true
         viewModelScope.launch {
-            _contacts.value = reloadContactsUseCase.execute().getOrThrow().toImmutableList()
+            reloadContactsUseCase.execute().onSuccess {
+                _contacts.value = it.toImmutableList()
+            }.onFailure {
+                _isFailed.value = true
+            }
             _isLoading.value = false
         }
     }

@@ -3,6 +3,7 @@ package com.y9vad9.contacts.ui
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.DeleteOutline
 import androidx.compose.material.icons.rounded.ArrowBack
@@ -29,6 +30,7 @@ import coil.transform.CircleCropTransformation
 import com.y9vad9.contacts.domain.value.Email
 import com.y9vad9.contacts.domain.value.Identifier
 import com.y9vad9.contacts.ui.components.OnBackPressed
+import com.y9vad9.contacts.ui.components.shimmerBackground
 import com.y9vad9.contacts.ui.dependencies.*
 import com.y9vad9.contacts.usecases.*
 import com.y9vad9.contacts.viewmodels.ContactDetailsViewModel
@@ -60,7 +62,6 @@ fun ContactScreen(
     val onBackPressed = remember {
         {
             viewModel.removeRollback(onBackPressed)
-            onBackPressed()
         }
     }
     OnBackPressed(onBack = onBackPressed)
@@ -82,7 +83,12 @@ fun ContactScreen(
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         if (contact?.profilePictureLink?.string.isNullOrEmpty()) {
-                            CircularProgressIndicator()
+                            Box(
+                                modifier = Modifier
+                                    .heightIn(min = 40.dp, max = 72.dp)
+                                    .widthIn(40.dp, 72.dp)
+                                    .shimmerBackground(CircleShape)
+                            )
                         } else {
                             val model = ImageRequest.Builder(LocalContext.current)
                                 .data(contact!!.profilePictureLink.string)

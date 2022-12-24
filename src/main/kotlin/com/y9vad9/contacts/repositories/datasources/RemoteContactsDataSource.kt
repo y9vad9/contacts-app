@@ -26,7 +26,7 @@ class RemoteContactsDataSource {
         }
     }
 
-    suspend fun getRandomUsers(count: Count): Result<GetRandomUsersResult> {
+    suspend fun getRandomUsers(count: Count): Result<GetRandomUsersResult> = runCatching {
         val result = client.get {
             parameter("inc", "email,name,picture")
             parameter("results", count.int)
